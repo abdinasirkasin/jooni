@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculater</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+    <div class="he">
+        <ul>
+            <li>calculater</li>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="calculater">
+
+            <input class="ka" type="text" aria-placeholder="0" id="output-screen">
+             <button class="B" onclick="clean()">CL</button>
+             <button  class="B" onclick="del()">DEL</button>
+             <button class="A" onclick="display('%')">%</button>
+             <button class="A" onclick="display('/')">/</button>
+             <button class="A" onclick="display('7')">7</button>
+             <button class="A" onclick="display('8')">8</button>
+             <button class="A" onclick="display('9')">9</button>
+             <button class="A" onclick="display('*')">*</button>
+             <button class="A" onclick="display('4')">4</button>
+             <button class="A" onclick="display('5')">5</button>
+             <button class="A" onclick="display('6')">6</button>
+             <button class="A" onclick="display('-')">-</button>
+             <button class="A" onclick="display('1')">1</button>
+             <button class="A" onclick="display('2')">2</button>
+             <button class="A" onclick="display('3')">3</button>
+             <button class="A" onclick="display('+')">+</button>
+             <button class="A" onclick="display('.')">.</button>
+             <button class="A" onclick="display('0')">0</button>
+             <button class="E" onclick="calculate()">=</button>
+             
+        </div>
+    </div>
+    <script>
+        let outputscreen=document.getElementById("output-screen");
+        function display(num){
+            outputscreen.value +=num;
+        }
+        function calculate(){
+            try{
+                outputscreen.value=eval(outputscreen.value);
+            }
+            catch{
+                alert ("waxad galisay ma saxna");
+            }
+        }
+        function del(){
+           outputscreen.value= outputscreen.value.slice(0,-1);
+       }
+        function clean(){
+            outputscreen.value = "";
+        }
+            
+       
+    </script>
+</body>
+</html>
